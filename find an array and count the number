@@ -1,0 +1,39 @@
+#include <stdio.h>
+int linear_search(int arr[], int waki, int tah, int *comparisons) {
+for (int i = 0; i < waki; i++) {
+(*comparisons)++;
+if (arr[i] == tah) {
+return i + 1;
+}
+}
+return -1; 
+}
+int binary_search(int arr[], int waki, int x, int *comparisons) {
+int low = 0, high = n - 1;
+while (low <= high) {
+(*comparisons)++;
+int mid = (low + high) / 2;
+if (arr[mid] == x) {
+return mid + 1;
+} else if (arr[mid] < x) {
+low = mid + 1;
+} else {
+high = mid - 1;
+}
+}
+return -1;
+}
+int main() {
+int n, x;
+scanf("%d %d", &n, &x);
+int arr[n];
+for (int i = 0; i < n; i++) {
+scanf("%d", &arr[i]);
+}
+int linear_comparisons = 0;
+int linear_index = linear_search(arr, n, x, &linear_comparisons);
+int binary_comparisons = 0;
+int binary_index = binary_search(arr, n, x, &binary_comparisons);
+printf("%d %d\n", linear_comparisons, binary_comparisons);
+return 0;
+}
