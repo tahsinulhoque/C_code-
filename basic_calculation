@@ -1,0 +1,13 @@
+#include<stdio.h>
+int main (){
+int a;
+int b;
+a= 10;
+b=20;
+printf("Result is : %d\n", a * b);
+printf("Result is : %d\n", a+b);
+printf("Result is : %d\n", a - b);
+printf(" Result is : %d\n", a/b);
+printf( " Result is : %d \n ", a%b);
+    return 0;
+}
