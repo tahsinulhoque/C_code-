@@ -1,0 +1,16 @@
+#include<stdio.h>
+
+// Function to print all divisors of a number
+void print_divisor(int x) {
+    int i;
+    for(i = 1; i <= x; i++) {
+        if(x % i == 0) {
+            printf("%d\n", i);
+        }
+    }
+}
+
+int main() {
+    print_divisor(10);  // Call function with 10
+    return 0;
+}
