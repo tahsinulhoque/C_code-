@@ -1,0 +1,46 @@
+#include <stdio.h>
+// Function to perform linear search
+int linear_search(int arr[], int n, int x, int *comparisons) {
+for (int i = 0; i < n; i++) {
+(*comparisons)++;
+if (arr[i] == x) {
+return i + 1; // Return the index (1-based) if found
+}
+}
+return -1; // Return -1 if not found
+}
+// Function to perform binary search
+int binary_search(int arr[], int n, int x, int *comparisons) {
+int low = 0, high = n - 1;
+while (low <= high) {
+(*comparisons)++;
+int mid = (low + high) / 2;
+if (arr[mid] == x) {
+return mid + 1; // Return the index (1-based) if found
+} else if (arr[mid] < x) {
+low = mid + 1;
+} else {
+high = mid - 1;
+}
+}
+return -1; // Return -1 if not found
+}
+int main() {
+// Input
+int n, x;
+scanf("%d %d", &n, &x);
+int arr[n];
+for (int i = 0; i < n; i++) {
+scanf("%d", &arr[i]);
+}
+// Linear search
+int linear_comparisons = 0;
+int linear_index = linear_search(arr, n, x, &linear_comparisons);
+// Binary search (array must be sorted)
+// Note: Sorting the array before applying binary search is not implemented in this example
+int binary_comparisons = 0;
+int binary_index = binary_search(arr, n, x, &binary_comparisons);
+// Output
+printf("%d %d\n", linear_comparisons, binary_comparisons);
+return 0;
+}
