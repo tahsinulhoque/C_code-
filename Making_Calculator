@@ -1,0 +1,28 @@
+#include<stdio.h>
+float a,b;
+float add(float a, float b){
+    return a + b;
+}
+float subtract(float a, float b){
+    return a-b;
+}
+float multiply(float a, float b){ 
+    return a * b;
+}
+float divied (float a, float b){
+    return a / b;
+}
+int main (){
+printf("Enter The value of a and b : \n");
+scanf("%f%f", &a, &b);
+float add_result= add(a, b);
+float subtract_result= subtract(a , b);
+float multiply_result= multiply(a , b);
+float divied_result= divied(a , b);
+
+printf("Add: %f, Subtract: %f, Multiply: %f, Divided: %f \n ", add_result, subtract_result , multiply_result, divied_result);
+
+
+
+return 0;
+}
